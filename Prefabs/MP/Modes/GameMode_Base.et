@@ -3,5 +3,10 @@ SCR_BaseGameMode {
  components {
   PS_BigMsgManager "{5ED8E86C055B7711}" {
   }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_SpawnLogic "{5ED9056D0F219F14}" {
+   }
+   m_bEnableRespawn 0
+  }
  }
 }

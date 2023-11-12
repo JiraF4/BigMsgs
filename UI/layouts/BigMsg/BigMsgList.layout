@@ -1,5 +1,6 @@
 OverlayWidgetClass {
  Name "BigMsgListOverlay"
+ "Z Order" 100000
  {
   VerticalLayoutWidgetClass "{5ED8F01CA3E20984}" {
    Name "BigMsgListVerticalLayout"
