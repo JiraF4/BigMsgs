@@ -1,0 +1,7 @@
+SCR_PlayerController {
+ ID "1A9BA6BEFA06E3B1"
+ components {
+  PS_BigMsgSenderComponent "{5ED8E86C13ABC213}" {
+  }
+ }
+}

@@ -1,0 +1,8 @@
+GameProject {
+ ID "BigMsgs"
+ GUID "5ED8BE1DDFEFBE4C"
+ TITLE "BigMsgs"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}

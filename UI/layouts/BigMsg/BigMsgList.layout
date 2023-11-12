@@ -1,0 +1,10 @@
+OverlayWidgetClass {
+ Name "BigMsgListOverlay"
+ {
+  VerticalLayoutWidgetClass "{5ED8F01CA3E20984}" {
+   Name "BigMsgListVerticalLayout"
+   Slot OverlayWidgetSlot "{5ED8F01CA3E209E5}" {
+   }
+  }
+ }
+}

@@ -1,0 +1,81 @@
+OverlayWidgetClass {
+ Name "BigMsgBoxOverlay"
+ Slot OverlayWidgetSlot "{5ED8F016CAA730EA}" {
+  Padding 10 10 10 10
+ }
+ components {
+  PS_BigMsgBox "{5ED8BE09E918E95E}" {
+  }
+ }
+ {
+  PanelWidgetClass "{5ED8BE1C37C3D2F2}" {
+   Name "MsgPanel"
+   Slot OverlayWidgetSlot "{5ED8E86EC1F99519}" {
+   }
+   Color 0 0 0 0.8
+   style full
+   {
+    OverlayWidgetClass "{5ED8BE1FD3149211}" {
+     Name "MsgPaddingOverlay"
+     Slot FrameWidgetSlot "{5ED8BE1FD3149275}" {
+      Anchor 0 0 0 0
+      OffsetLeft 0
+      PositionY 0
+      OffsetTop 0
+      SizeX 100
+      OffsetRight -100
+      SizeY 30
+      OffsetBottom -30
+      SizeToContent 1
+     }
+     {
+      FrameWidgetClass "{5ED8BE1F98EC26D3}" {
+       Name "MsgPaddingFrame"
+       Slot OverlayWidgetSlot "{5ED8BE1F98EC2635}" {
+        Padding 10 10 10 10
+       }
+       {
+        OverlayWidgetClass "{5ED8BE1FAA6CC65B}" {
+         Name "MsgOverlay"
+         Slot FrameWidgetSlot "{5ED8BE1FAA6CC787}" {
+          OffsetLeft 0
+          OffsetTop 0
+          SizeX 0
+          OffsetRight 0
+          SizeY 0
+          OffsetBottom 0
+          SizeToContent 1
+         }
+         {
+          ImageWidgetClass "{5ED8BE1F9289D8E5}" {
+           Name "MsgIcon"
+           Slot OverlayWidgetSlot "{5ED8BE1B82C09972}" {
+            HorizontalAlign 0
+           }
+           Texture "{12BA7AE37121F768}UI/Textures/Icons/icons_wrapperUI-96.imageset"
+           Image "veh_handbrake"
+           Size 96 96
+          }
+          TextWidgetClass "{5ED8BE1FC41B7F6B}" {
+           Name "MsgText"
+           Slot OverlayWidgetSlot "{5ED8BE1B82C09AA2}" {
+            HorizontalAlign 1
+            VerticalAlign 1
+            Padding 106 5 5 5
+           }
+           "Z Order" 1
+           Text "We may live better"
+           "Font Size" 96
+           "Min Font Size" 96
+           "Line Spacing" 1
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
