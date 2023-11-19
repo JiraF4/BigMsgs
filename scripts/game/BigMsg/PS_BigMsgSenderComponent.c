@@ -17,6 +17,11 @@ class PS_BigMsgSenderComponent : ScriptComponent
 	[RplRpc(RplChannel.Reliable, RplRcver.Server)]
 	void RPC_SendBigMsg(string msg)
 	{
+		PlayerManager playerManager = GetGame().GetPlayerManager();
+		PlayerController playerController = PlayerController.Cast(GetOwner());
+		if (!playerManager.HasPlayerRole(playerController.GetPlayerId(), EPlayerRole.ADMINISTRATOR))
+			return;
+		
 		PS_BigMsgManager bigMsgManager = PS_BigMsgManager.GetInstance();
 		bigMsgManager.SendMsgToClients(msg);
 	}
