@@ -1,0 +1,30 @@
+OverlayWidgetClass : "{A5C2415B9B5449A1}UI/layouts/BigMsg/BigMsgBox.layout" {
+ {
+  PanelWidgetClass "{5ED8BE1C37C3D2F2}" {
+   Prefab "{5ED8BE1C37C3D2F2}"
+   {
+    OverlayWidgetClass "{5ED8BE1FD3149211}" {
+     Prefab "{5ED8BE1FD3149211}"
+     {
+      FrameWidgetClass "{5ED8BE1F98EC26D3}" {
+       Prefab "{5ED8BE1F98EC26D3}"
+       {
+        OverlayWidgetClass "{5ED8BE1FAA6CC65B}" {
+         Prefab "{5ED8BE1FAA6CC65B}"
+         {
+          ImageWidgetClass "{5ED8BE1F9289D8E5}" {
+           Prefab "{5ED8BE1F9289D8E5}"
+           Color 0.085 0.186 0.533 1
+           Image "veh_handbrake"
+           Size 96 96
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

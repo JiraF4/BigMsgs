@@ -52,8 +52,9 @@ OverlayWidgetClass {
            Slot OverlayWidgetSlot "{5ED8BE1B82C09972}" {
             HorizontalAlign 0
            }
+           Color 0.61 0.494 0.164 1
            Texture "{12BA7AE37121F768}UI/Textures/Icons/icons_wrapperUI-96.imageset"
-           Image "veh_handbrake"
+           Image "feedback"
            Size 96 96
           }
           TextWidgetClass "{5ED8BE1FC41B7F6B}" {

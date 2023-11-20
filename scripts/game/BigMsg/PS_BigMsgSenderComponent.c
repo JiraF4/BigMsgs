@@ -10,19 +10,19 @@ class PS_BigMsgSenderComponentClass: ScriptComponentClass
 [ComponentEditorProps(icon: HYBRID_COMPONENT_ICON)]
 class PS_BigMsgSenderComponent : ScriptComponent
 {
-	void SendBigMsg(string msg)
+	void SendBigMsg(string msg, PS_EBigMsgType msgType)
 	{
-		Rpc(RPC_SendBigMsg, msg);
+		Rpc(RPC_SendBigMsg, msg, msgType);
 	}
 	[RplRpc(RplChannel.Reliable, RplRcver.Server)]
-	void RPC_SendBigMsg(string msg)
+	void RPC_SendBigMsg(string msg, PS_EBigMsgType msgType)
 	{
 		PlayerManager playerManager = GetGame().GetPlayerManager();
 		PlayerController playerController = PlayerController.Cast(GetOwner());
-		if (!playerManager.HasPlayerRole(playerController.GetPlayerId(), EPlayerRole.ADMINISTRATOR))
+		if (!playerManager.HasPlayerRole(playerController.GetPlayerId(), EPlayerRole.ADMINISTRATOR) && !Replication.IsServer())
 			return;
 		
 		PS_BigMsgManager bigMsgManager = PS_BigMsgManager.GetInstance();
-		bigMsgManager.SendMsgToClients(msg);
+		bigMsgManager.SendMsgToClients(msg, msgType);
 	}
 }

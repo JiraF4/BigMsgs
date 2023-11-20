@@ -17,11 +17,13 @@ class PS_BigMsgBox : SCR_ScriptedWidgetComponent
 	
 	override void HandlerAttached(Widget w)
 	{
+		if (!GetGame().InPlayMode())
+			return;
+		
 		super.HandlerAttached(w);
 		m_wMsgIcon = ImageWidget.Cast(w.FindAnyWidget("MsgIcon"));
 		m_wMsgText = TextWidget.Cast(w.FindAnyWidget("MsgText"));
-		super.HandlerAttached(w);
-		
+				
 		AudioSystem.PlaySound("{06C02AFB2CA882EB}Sounds/UI/Samples/Menu/UI_Task_Created.wav");
 		
 		if (GetGame().InPlayMode())
