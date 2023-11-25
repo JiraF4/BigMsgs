@@ -19,7 +19,7 @@ class PS_BigMsgSenderComponent : ScriptComponent
 	{
 		PlayerManager playerManager = GetGame().GetPlayerManager();
 		PlayerController playerController = PlayerController.Cast(GetOwner());
-		if (!playerManager.HasPlayerRole(playerController.GetPlayerId(), EPlayerRole.ADMINISTRATOR) && !Replication.IsServer())
+		if (!playerManager.HasPlayerRole(playerController.GetPlayerId(), EPlayerRole.ADMINISTRATOR))
 			return;
 		
 		PS_BigMsgManager bigMsgManager = PS_BigMsgManager.GetInstance();
