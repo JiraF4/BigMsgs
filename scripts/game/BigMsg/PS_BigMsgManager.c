@@ -54,9 +54,14 @@ class PS_BigMsgManager : ScriptComponent
 	void SendBigMsg_Callback(SCR_ChatPanel panel, string data, PS_EBigMsgType msgType)
 	{
 		if (data == "") return;
-		PlayerController playerController = GetGame().GetPlayerController();
-		PS_BigMsgSenderComponent bigMsgSenderComponent = PS_BigMsgSenderComponent.Cast(playerController.FindComponent(PS_BigMsgSenderComponent));
-		bigMsgSenderComponent.SendBigMsg(data, msgType);
+		if (msgType == PS_EBigMsgType.Server)
+		{
+			SendMsgToClients(data, msgType);
+		} else {
+			PlayerController playerController = GetGame().GetPlayerController();
+			PS_BigMsgSenderComponent bigMsgSenderComponent = PS_BigMsgSenderComponent.Cast(playerController.FindComponent(PS_BigMsgSenderComponent));
+			bigMsgSenderComponent.SendBigMsg(data, msgType);
+		}
 	}
 	
 	void SendMsgToClients(string msg, PS_EBigMsgType msgType)
