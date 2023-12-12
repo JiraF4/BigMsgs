@@ -36,7 +36,7 @@ class PS_BigMsgManager : ScriptComponent
 		SCR_ChatPanelManager chatPanelManager = SCR_ChatPanelManager.GetInstance();
 		ChatCommandInvoker invoker = chatPanelManager.GetCommandInvoker("amsg");
 		invoker.Insert(SendBigMsg_CallbackAdmin);
-		ChatCommandInvoker invoker = chatPanelManager.GetCommandInvoker("фьып");
+		invoker = chatPanelManager.GetCommandInvoker("фьып");
 		invoker.Insert(SendBigMsg_CallbackAdmin);
 		invoker = chatPanelManager.GetCommandInvoker("smsg");
 		invoker.Insert(SendBigMsg_CallbackServer);
