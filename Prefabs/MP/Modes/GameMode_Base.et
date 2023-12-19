@@ -1,12 +1,7 @@
 SCR_BaseGameMode {
  ID "56B2B479C6B96951"
  components {
-  PS_BigMsgManager "{5ED8E86C055B7711}" {
-  }
-  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
-   m_SpawnLogic SCR_SpawnLogic "{5ED9056D0F219F14}" {
-   }
-   m_bEnableRespawn 0
+  PS_BigMsgManager "{5F27112D3882737F}" {
   }
  }
 }
