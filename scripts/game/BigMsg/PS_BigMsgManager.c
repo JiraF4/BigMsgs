@@ -40,6 +40,8 @@ class PS_BigMsgManager : ScriptComponent
 		invoker.Insert(SendBigMsg_CallbackAdmin);
 		invoker = chatPanelManager.GetCommandInvoker("smsg");
 		invoker.Insert(SendBigMsg_CallbackServer);
+		invoker = chatPanelManager.GetCommandInvoker("lmsg");
+		invoker.Insert(SendBigMsg_CallbackLocal);
 	}
 	
 	
@@ -51,6 +53,10 @@ class PS_BigMsgManager : ScriptComponent
 	{
 		if (panel) return;
 		SendBigMsg_Callback(panel, data, PS_EBigMsgType.Server);
+	}
+	void SendBigMsg_CallbackLocal(SCR_ChatPanel panel, string data)
+	{
+		RPC_SendMsgToClients(data, PS_EBigMsgType.Local);
 	}
 	
 	void SendBigMsg_Callback(SCR_ChatPanel panel, string data, PS_EBigMsgType msgType)
@@ -82,6 +88,9 @@ class PS_BigMsgManager : ScriptComponent
 				break;
 			case PS_EBigMsgType.Server:
 				widget = GetGame().GetWorkspace().CreateWidgets("{A0F64AF249D4819B}UI/layouts/BigMsg/BigMsgBoxServer.layout", m_wBigMsgList);
+				break;
+			case PS_EBigMsgType.Local:
+				widget = GetGame().GetWorkspace().CreateWidgets("{183C1E48055913CB}UI/layouts/BigMsg/BigMsgBoxLocal.layout", m_wBigMsgList);
 				break;
 		}
 		

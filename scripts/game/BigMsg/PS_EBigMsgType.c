@@ -1,5 +1,6 @@
 enum PS_EBigMsgType
 {
 	Admin,
-	Server
+	Server,
+	Local
 };
