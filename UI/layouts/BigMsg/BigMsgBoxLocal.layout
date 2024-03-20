@@ -15,6 +15,11 @@ OverlayWidgetClass : "{A5C2415B9B5449A1}UI/layouts/BigMsg/BigMsgBox.layout" {
           OverlayWidgetClass "{5ED8BE1FAA6CC65B}" {
            Prefab "{5ED8BE1FAA6CC65B}"
            {
+            ImageWidgetClass "{5ED8BE1F9289D8E5}" {
+             Prefab "{5ED8BE1F9289D8E5}"
+             Texture "{54BF80BD3C7D96BE}UI/textures/Warning.edds"
+             Size 44 44
+            }
             TextWidgetClass "{5ED8BE1FC41B7F6B}" {
              Prefab "{5ED8BE1FC41B7F6B}"
              "Font Size" 48
