@@ -9,14 +9,18 @@ OverlayWidgetClass : "{A5C2415B9B5449A1}UI/layouts/BigMsg/BigMsgBox.layout" {
       FrameWidgetClass "{5ED8BE1F98EC26D3}" {
        Prefab "{5ED8BE1F98EC26D3}"
        {
-        OverlayWidgetClass "{5ED8BE1FAA6CC65B}" {
-         Prefab "{5ED8BE1FAA6CC65B}"
+        SizeLayoutWidgetClass "{60E8DE87ECB19DE4}" {
+         Prefab "{60E8DE87ECB19DE4}"
          {
-          ImageWidgetClass "{5ED8BE1F9289D8E5}" {
-           Prefab "{5ED8BE1F9289D8E5}"
-           Color 0.655 0.875 0.875 1
-           Image "player"
-           Size 96 96
+          OverlayWidgetClass "{5ED8BE1FAA6CC65B}" {
+           Prefab "{5ED8BE1FAA6CC65B}"
+           {
+            TextWidgetClass "{5ED8BE1FC41B7F6B}" {
+             Prefab "{5ED8BE1FC41B7F6B}"
+             "Font Size" 48
+             "Min Font Size" 48
+            }
+           }
           }
          }
         }

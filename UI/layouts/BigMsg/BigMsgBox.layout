@@ -12,9 +12,26 @@ OverlayWidgetClass {
    Name "MsgPanel"
    Slot OverlayWidgetSlot "{5ED8E86EC1F99519}" {
    }
-   Color 0 0 0 0.8
+   Opacity 0.9
+   Color 0.007 0.012 0.014 0.9
    style full
    {
+    BlurWidgetClass "{60E8E02D0A8B3664}" {
+     Name "Blur"
+     Slot FrameWidgetSlot "{60E8E02D0C2A2BB9}" {
+      Anchor 0 0 1 1
+      PositionX 0
+      OffsetLeft 0
+      PositionY 0
+      OffsetTop 0
+      SizeX -491.001
+      OffsetRight 0
+      SizeY -258.4
+      OffsetBottom 0
+     }
+     Opacity 0.9
+     Intensity 0.3
+    }
     OverlayWidgetClass "{5ED8BE1FD3149211}" {
      Name "MsgPaddingOverlay"
      Slot FrameWidgetSlot "{5ED8BE1FD3149275}" {
@@ -29,15 +46,41 @@ OverlayWidgetClass {
       SizeToContent 1
      }
      {
+      HorizontalLayoutWidgetClass "{60E8E02D047E065E}" {
+       Name "HorizontalLayout"
+       Slot OverlayWidgetSlot "{60E8E02F5CA71A63}" {
+        HorizontalAlign 3
+        VerticalAlign 0
+       }
+       {
+        ImageWidgetClass "{60E8E02D047E065F}" {
+         Name "Fill"
+         Slot LayoutSlot "{60E8E02F6121607A}" {
+          SizeMode Fill
+         }
+         Color 0.761 0.386 0.078 1
+         Size 6 6
+        }
+        ImageWidgetClass "{60E8E02D047E07A0}" {
+         Name "Empty"
+         Slot LayoutSlot "{60E8E02F6121607A}" {
+          SizeMode Fill
+          FillWeight 0
+         }
+         Color 0 0 0 0
+         Size 6 6
+        }
+       }
+      }
       FrameWidgetClass "{5ED8BE1F98EC26D3}" {
        Name "MsgPaddingFrame"
        Slot OverlayWidgetSlot "{5ED8BE1F98EC2635}" {
         Padding 10 10 10 10
        }
        {
-        OverlayWidgetClass "{5ED8BE1FAA6CC65B}" {
-         Name "MsgOverlay"
-         Slot FrameWidgetSlot "{5ED8BE1FAA6CC787}" {
+        SizeLayoutWidgetClass "{60E8DE87ECB19DE4}" {
+         Name "SizeLayout"
+         Slot FrameWidgetSlot "{60E8DE87ECB19DCD}" {
           OffsetLeft 0
           OffsetTop 0
           SizeX 0
@@ -46,29 +89,41 @@ OverlayWidgetClass {
           OffsetBottom 0
           SizeToContent 1
          }
+         AllowMaxDesiredWidth 1
+         MaxDesiredWidth 650
          {
-          ImageWidgetClass "{5ED8BE1F9289D8E5}" {
-           Name "MsgIcon"
-           Slot OverlayWidgetSlot "{5ED8BE1B82C09972}" {
-            HorizontalAlign 0
+          OverlayWidgetClass "{5ED8BE1FAA6CC65B}" {
+           Name "MsgOverlay"
+           Slot AlignableSlot "{60E8DE87EC84AC82}" {
            }
-           Color 0.61 0.494 0.164 1
-           Texture "{12BA7AE37121F768}UI/Textures/Icons/icons_wrapperUI-96.imageset"
-           Image "feedback"
-           Size 96 96
-          }
-          TextWidgetClass "{5ED8BE1FC41B7F6B}" {
-           Name "MsgText"
-           Slot OverlayWidgetSlot "{5ED8BE1B82C09AA2}" {
-            HorizontalAlign 1
-            VerticalAlign 1
-            Padding 106 5 5 5
+           {
+            ImageWidgetClass "{5ED8BE1F9289D8E5}" {
+             Name "MsgIcon"
+             Slot OverlayWidgetSlot "{5ED8BE1B82C09972}" {
+              HorizontalAlign 0
+              VerticalAlign 0
+              Padding 5 5 0 0
+             }
+             Color 0.61 0.494 0.164 1
+             Texture "{12BA7AE37121F768}UI/Textures/Icons/icons_wrapperUI-96.imageset"
+             Image "feedback"
+             Size 96 96
+            }
+            TextWidgetClass "{5ED8BE1FC41B7F6B}" {
+             Name "MsgText"
+             Slot OverlayWidgetSlot "{5ED8BE1B82C09AA2}" {
+              HorizontalAlign 1
+              VerticalAlign 1
+              Padding 106 5 5 5
+             }
+             "Z Order" 1
+             Text "We may live better We may live better We may live better We may live better"
+             "Font Size" 48
+             "Min Font Size" 48
+             Wrap 1
+             "Line Spacing" 1
+            }
            }
-           "Z Order" 1
-           Text "We may live better"
-           "Font Size" 96
-           "Min Font Size" 96
-           "Line Spacing" 1
           }
          }
         }
