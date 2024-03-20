@@ -68,7 +68,7 @@ class PS_BigMsgBox : SCR_ScriptedWidgetComponent
 	{
 		m_wMsgText.SetText(text);
 		
-		m_fFadeTime  = text.Length() * 0.08 + 2.5;
-		m_fWholeTime = text.Length() * 0.08 + 2.5;
+		m_fFadeTime  = text.Length() * 0.03 + 3.0;
+		m_fWholeTime = text.Length() * 0.03 + 3.0;
 	}
 }
