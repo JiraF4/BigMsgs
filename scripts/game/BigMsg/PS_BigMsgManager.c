@@ -42,9 +42,14 @@ class PS_BigMsgManager : ScriptComponent
 		invoker.Insert(SendBigMsg_CallbackServer);
 		invoker = chatPanelManager.GetCommandInvoker("lmsg");
 		invoker.Insert(SendBigMsg_CallbackLocal);
+		invoker = chatPanelManager.GetCommandInvoker("tmsg");
+		invoker.Insert(SendBigMsg_CallbackToAdmin);
 	}
 	
-	
+	void SendBigMsg_CallbackToAdmin(SCR_ChatPanel panel, string data)
+	{
+		SendBigMsg_Callback(panel, data, PS_EBigMsgType.ToAdmin);
+	}
 	void SendBigMsg_CallbackAdmin(SCR_ChatPanel panel, string data)
 	{
 		SendBigMsg_Callback(panel, data, PS_EBigMsgType.Admin);
@@ -62,7 +67,7 @@ class PS_BigMsgManager : ScriptComponent
 	void SendBigMsg_Callback(SCR_ChatPanel panel, string data, PS_EBigMsgType msgType)
 	{
 		if (data == "") return;
-		if (msgType == PS_EBigMsgType.Server)
+		if (msgType == PS_EBigMsgType.Server || msgType == PS_EBigMsgType.ToAdmin)
 		{
 			SendMsgToClients(data, msgType);
 		} else {
@@ -92,7 +97,14 @@ class PS_BigMsgManager : ScriptComponent
 			case PS_EBigMsgType.Local:
 				widget = GetGame().GetWorkspace().CreateWidgets("{183C1E48055913CB}UI/layouts/BigMsg/BigMsgBoxLocal.layout", m_wBigMsgList);
 				break;
+			case PS_EBigMsgType.ToAdmin:
+				if (Replication.IsServer() || SCR_Global.IsAdmin())
+					widget = GetGame().GetWorkspace().CreateWidgets("{84C6712C48944F27}UI/layouts/BigMsg/BigMsgBoxToAdmin.layout", m_wBigMsgList);
+				break;
 		}
+		
+		if (!widget)
+			return;
 		
 		PS_BigMsgBox bigMsgBox = PS_BigMsgBox.Cast(widget.FindHandler(PS_BigMsgBox));
 		bigMsgBox.SetText(msg);

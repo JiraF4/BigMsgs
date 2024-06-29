@@ -1,0 +1,44 @@
+OverlayWidgetClass : "{A5C2415B9B5449A1}UI/layouts/BigMsg/BigMsgBox.layout" {
+ {
+  PanelWidgetClass "{5ED8BE1C37C3D2F2}" {
+   Prefab "{5ED8BE1C37C3D2F2}"
+   {
+    BlurWidgetClass "{60E8E02D0A8B3664}" {
+     Prefab "{60E8E02D0A8B3664}"
+     "Is Visible" 0
+    }
+    OverlayWidgetClass "{5ED8BE1FD3149211}" {
+     Prefab "{5ED8BE1FD3149211}"
+     {
+      FrameWidgetClass "{5ED8BE1F98EC26D3}" {
+       Prefab "{5ED8BE1F98EC26D3}"
+       {
+        SizeLayoutWidgetClass "{60E8DE87ECB19DE4}" {
+         Prefab "{60E8DE87ECB19DE4}"
+         {
+          OverlayWidgetClass "{5ED8BE1FAA6CC65B}" {
+           Prefab "{5ED8BE1FAA6CC65B}"
+           {
+            ImageWidgetClass "{5ED8BE1F9289D8E5}" {
+             Prefab "{5ED8BE1F9289D8E5}"
+             Texture "{0A0F1F09638963D0}UI/textures/Info.edds"
+             Size 44 44
+            }
+            TextWidgetClass "{5ED8BE1FC41B7F6B}" {
+             Prefab "{5ED8BE1FC41B7F6B}"
+             Slot OverlayWidgetSlot "{5ED8BE1B82C09AA2}" {
+              Padding 54 5 5 5
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
