@@ -44,8 +44,14 @@ class PS_BigMsgManager : ScriptComponent
 		invoker.Insert(SendBigMsg_CallbackLocal);
 		invoker = chatPanelManager.GetCommandInvoker("tmsg");
 		invoker.Insert(SendBigMsg_CallbackToAdmin);
+		invoker = chatPanelManager.GetCommandInvoker("dmsg");
+		invoker.Insert(SendBigMsg_CallbackDirect);
 	}
 	
+	void SendBigMsg_CallbackDirect(SCR_ChatPanel panel, string data)
+	{
+		SendBigMsg_Callback(panel, data, PS_EBigMsgType.Direct);
+	}
 	void SendBigMsg_CallbackToAdmin(SCR_ChatPanel panel, string data)
 	{
 		SendBigMsg_Callback(panel, data, PS_EBigMsgType.ToAdmin);
@@ -79,6 +85,11 @@ class PS_BigMsgManager : ScriptComponent
 	
 	void SendMsgToClients(string msg, PS_EBigMsgType msgType)
 	{
+		if (msgType == PS_EBigMsgType.Direct)
+		{
+			SendBigMsgDirect(msg, msgType);
+			return;
+		}
 		RPC_SendMsgToClients(msg, msgType);
 		Rpc(RPC_SendMsgToClients, msg, msgType);
 	}
@@ -109,4 +120,48 @@ class PS_BigMsgManager : ScriptComponent
 		PS_BigMsgBox bigMsgBox = PS_BigMsgBox.Cast(widget.FindHandler(PS_BigMsgBox));
 		bigMsgBox.SetText(msg);
 	}
+	
+	void SendBigMsgDirect(string msg, PS_EBigMsgType msgType)
+	{
+		if (msg.IsEmpty())
+			return;
+		
+		array<string> outTokens = {};
+		msg.Split(" ", outTokens, true);
+		int playerId = outTokens[0].ToInt(-1);
+		if (playerId == -1)
+			return;
+		msg = msg.Substring(outTokens[0].Length(), msg.Length() - outTokens[0].Length());
+		msg = msg.Trim();
+		
+		PlayerController playerController = GetGame().GetPlayerManager().GetPlayerController(playerId);
+		if (playerController == null)
+			return;
+		
+		PS_BigMsgSenderComponent bigMsgSenderComponent = PS_BigMsgSenderComponent.Cast(playerController.FindComponent(PS_BigMsgSenderComponent));
+		bigMsgSenderComponent.DirectBigMsg(msg, msgType);
+	}
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

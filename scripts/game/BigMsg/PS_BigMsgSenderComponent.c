@@ -16,7 +16,7 @@ class PS_BigMsgSenderComponent : ScriptComponent
 	}
 	[RplRpc(RplChannel.Reliable, RplRcver.Server)]
 	void RPC_SendBigMsg(string msg, PS_EBigMsgType msgType)
-	{
+	{		
 		PlayerManager playerManager = GetGame().GetPlayerManager();
 		PlayerController playerController = PlayerController.Cast(GetOwner());
 		if (!playerManager.HasPlayerRole(playerController.GetPlayerId(), EPlayerRole.ADMINISTRATOR))
@@ -24,5 +24,16 @@ class PS_BigMsgSenderComponent : ScriptComponent
 		
 		PS_BigMsgManager bigMsgManager = PS_BigMsgManager.GetInstance();
 		bigMsgManager.SendMsgToClients(msg, msgType);
+	}
+	
+	void DirectBigMsg(string msg, PS_EBigMsgType msgType)
+	{
+		Rpc(RPC_DirectBigMsg, msg, msgType);
+	}
+	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
+	void RPC_DirectBigMsg(string msg, PS_EBigMsgType msgType)
+	{
+		PS_BigMsgManager bigMsgManager = PS_BigMsgManager.GetInstance();
+		bigMsgManager.RPC_SendMsgToClients(msg, PS_EBigMsgType.Admin);
 	}
 }
