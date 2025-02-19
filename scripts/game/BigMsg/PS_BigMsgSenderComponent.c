@@ -34,6 +34,6 @@ class PS_BigMsgSenderComponent : ScriptComponent
 	void RPC_DirectBigMsg(string msg, PS_EBigMsgType msgType)
 	{
 		PS_BigMsgManager bigMsgManager = PS_BigMsgManager.GetInstance();
-		bigMsgManager.RPC_SendMsgToClients(msg, PS_EBigMsgType.Admin);
+		bigMsgManager.RPC_SendMsgToClients(msg, PS_EBigMsgType.Direct);
 	}
 }

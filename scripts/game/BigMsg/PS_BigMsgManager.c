@@ -111,6 +111,8 @@ class PS_BigMsgManager : ScriptComponent
 			case PS_EBigMsgType.ToAdmin:
 				if (Replication.IsServer() || SCR_Global.IsAdmin())
 					widget = GetGame().GetWorkspace().CreateWidgets("{84C6712C48944F27}UI/layouts/BigMsg/BigMsgBoxToAdmin.layout", m_wBigMsgList);
+			case PS_EBigMsgType.Direct:
+				widget = GetGame().GetWorkspace().CreateWidgets("{7DC0EBD1625DD165}UI/layouts/BigMsg/BigMsgBoxFromAdmin.layout", m_wBigMsgList);
 				break;
 		}
 		

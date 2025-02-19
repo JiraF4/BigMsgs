@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{7DC0EBD1625DD165}UI/layouts/BigMsg/BigMsgBoxFromAdmin.layout"
+ Configurations {
+  LayoutResourceClass PC {
+  }
+  LayoutResourceClass XBOX_ONE : PC {
+  }
+  LayoutResourceClass XBOX_SERIES : PC {
+  }
+  LayoutResourceClass PS4 : PC {
+  }
+  LayoutResourceClass PS5 : PC {
+  }
+  LayoutResourceClass HEADLESS : PC {
+  }
+ }
+}

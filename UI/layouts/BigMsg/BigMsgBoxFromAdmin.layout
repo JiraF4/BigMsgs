@@ -1,0 +1,55 @@
+OverlayWidgetClass : "{A5C2415B9B5449A1}UI/layouts/BigMsg/BigMsgBox.layout" {
+ {
+  PanelWidgetClass "{5ED8BE1C37C3D2F2}" {
+   Prefab "{5ED8BE1C37C3D2F2}"
+   {
+    OverlayWidgetClass "{5ED8BE1FD3149211}" {
+     Prefab "{5ED8BE1FD3149211}"
+     {
+      OverlayWidgetClass "{64A6B8AF8816CB07}" {
+       Name "OverlayHint"
+       Slot OverlayWidgetSlot "{64A6B8AD1D6D8493}" {
+        VerticalAlign 2
+        Padding 0 0 0 10
+       }
+       Clipping False
+       {
+        RichTextWidgetClass "{64A6B8AF9A6DC561}" {
+         Name "HintText"
+         Slot OverlayWidgetSlot "{64A6B8AF9A6DC578}" {
+         }
+         Clipping False
+         Color 0.761 0.386 0.078 1
+         Text "<image set='{73BAE6966DBC17CB}UI/Imagesets/Hint/Hint.imageset' name='Tip' scale='1'/> Use chat <action name='ChatToggle' scale='1.25'/> to answer."
+        }
+       }
+      }
+      FrameWidgetClass "{5ED8BE1F98EC26D3}" {
+       Prefab "{5ED8BE1F98EC26D3}"
+       Slot OverlayWidgetSlot "{5ED8BE1F98EC2635}" {
+        Padding 10 10 10 40
+       }
+       {
+        SizeLayoutWidgetClass "{60E8DE87ECB19DE4}" {
+         Prefab "{60E8DE87ECB19DE4}"
+         {
+          OverlayWidgetClass "{5ED8BE1FAA6CC65B}" {
+           Prefab "{5ED8BE1FAA6CC65B}"
+           {
+            ImageWidgetClass "{5ED8BE1F9289D8E5}" {
+             Prefab "{5ED8BE1F9289D8E5}"
+             Texture "{0A0F1F09638963D0}UI/textures/Info.edds"
+             Size 44 44
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
