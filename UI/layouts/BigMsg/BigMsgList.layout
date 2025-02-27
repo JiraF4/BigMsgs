@@ -6,7 +6,7 @@ OverlayWidgetClass {
    Name "BigMsgListVerticalLayout"
    Slot OverlayWidgetSlot "{5ED8F01CA3E209E5}" {
     VerticalAlign 0
-    Padding 0 175 0 0
+    Padding 0 225 0 0
    }
   }
  }
